@@ -1,0 +1,50 @@
+1.Scatter plot
+
+Source code:
+import matplotlib.pyplot as plt
+import pandas as pd
+df=pd.read_csv('Area.csv')
+plt.scatter(df.Year,df.Forest,color='#90ee90')
+plt.scatter(df.Year,df.Shrubs,color='g')
+plt.scatter(df.Year,df.AgricultureLand,color='y')
+plt.scatter(df.Year,df.BarrenLand,color='pink')
+plt.scatter(df.Year,df.BuiltupArea,color='r')
+plt.scatter(df.Year,df.WaterBodies,color='b')
+plt.xlabel('Year')
+plt.ylabel('Area in Km^2')
+plt.title('Birendranagar Municipality Land Uses Analysis from 2017 to 2022 of different categories')
+plt.show()
+plt.savefig('scatter.png',bbox_inches='tight')
+
+2.Line plot
+
+Source code:
+import matplotlib.pyplot as plt
+import pandas as pd
+plt.figure(figsize=(6,8))
+ds=pd.read_csv('Area.csv')
+plt.title('Birendranagar Municipality Land Uses Analysis from 2017 to 2021')
+plt.plot(ds.Year,ds.Forest,'#90ee90')
+plt.plot(ds.Year,ds.Shrubs,'g.-')
+plt.plot(ds.Year,ds.AgricultureLand,'y.-')
+plt.plot(ds.Year,ds.BarrenLand,'#FF69B4')
+plt.plot(ds.Year,ds.BuiltupArea,'r.-')
+plt.plot(ds.Year,ds.WaterBodies,'b.-')
+plt.xlabel('Year')
+plt.ylabel('Area in Km^2')
+plt.legend(['Forest','Shrubs','AgricultureLand','BarrenLand','BuiltupArea','WaterBodies'])
+#plt.savefig('lineplot.png')
+plt.show()
+
+3.Bar Diagram
+
+Source Code:
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+df=pd.read_csv('Area.csv')
+df.plot(x='Year',y=['Forest','Shrubs','AgricultureLand','BarrenLand','BuiltupArea','WaterBodies'],kind='bar',figsize=(12,8),width=0.78)
+plt.title('Birendranagar Municipality Land Uses Analysis from 2017 to 2021 of different categories')
+plt.ylabel('Area in Km^2')
+plt.savefig('barfig.png')
+plt.show()
