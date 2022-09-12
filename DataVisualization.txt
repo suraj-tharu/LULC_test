@@ -1,0 +1,129 @@
+#Python-DataVisualization_Birendranagar_Municipality
+#Line plot
+import matplotlib.pyplot as plt
+import pandas as pd
+ds=pd.read_csv('Area.csv')
+plt.figure(figsize=(12,10))
+plt.plot(ds.Year,ds.Forest,'#90ee90')
+plt.plot(ds.Year,ds.Shrubs,'g.-')
+plt.plot(ds.Year,ds.AgricultureLand,'y.-')
+plt.plot(ds.Year,ds.Builtuparea,'red')
+plt.plot(ds.Year,ds.WaterBodies,'b.-')
+plt.plot(ds.Year,ds.Barrenland,'#FF1493')
+plt.xlabel('Year')
+plt.ylabel('Area in Km^2')
+plt.legend(['Forest','Shrubs','AgricultureLand','BuiltupArea','Waterbodies','Barrenland'])
+plt.savefig('lineplot.png',bbox_inches='tight')
+plt.show()
+
+#Scatterplot
+import matplotlib.pyplot as plt
+import pandas as pd
+df=pd.read_csv('Area.csv')
+plt.figure(figsize=(10,8))
+plt.scatter(df.Year,df.Forest,color='#90ee90')
+plt.scatter(df.Year,df.Shrubs,color='g')
+plt.scatter(df.Year,df.AgricultureLand,color='y')
+plt.scatter(df.Year,df.Builtuparea,color='red')
+plt.scatter(df.Year,df.WaterBodies,color='blue')
+plt.scatter(df.Year,df.Barrenland,color='#FF1493')
+plt.xlabel('Year')
+plt.ylabel('Area in Km^2')
+plt.legend(['Forest','Shrubs','AgricultureLand','BuiltupArea','WaterBodies','Barrenland'])
+plt.savefig('scatter.png',bbox_inches='tight')
+plt.show()
+
+#Bar Diagram
+import matplotlib.pyplot as plt
+import pandas as pd
+df=pd.read_csv('AreaHectare.csv')
+df.plot(x='Year',y=['WaterBodies','Barrenland','Shrubs','Builtuparea','Forest','AgricultureLand'],kind='bar',figsize=(12,10),width=0.78)
+#plt.title('Birendranagar Municipality Land Uses Analysis from 2017 to 2021 of different categories')
+plt.ylabel('Area in Hectare')
+plt.savefig('barfig.png',bbox_inches='tight')
+plt.show()
+
+#Pie-Chart [2017]
+import matplotlib.pyplot as plt
+labels=['Forest','Shrubs','AgricultureLand','BuiltupArea','WaterBodies','Barrenland']
+sizes=[41.76,29.63,23.49,4.64,0.45,0.004]
+#add colors
+explode=[0.2,0,0,0,0.2,0.4]
+colors=['#90ee90','green','yellow','red','blue','#FF1493']
+fig1, ax1=plt.subplots()
+ax1.pie(sizes,labels=labels,colors=colors,autopct='%1.3f%%',shadow=True,explode=explode,startangle=90)
+#Equal aspect ratio ensures that pie is drawn as a circle
+ax1.axis('equal')
+plt.xlabel('2017')
+plt.tight_layout()
+plt.legend(['Forest','Shrubs','Agricultureland','BuiltupArea','Waterbodies','Barrenland'])
+plt.savefig('2017-Pie.png',bbox_inches='tight')
+plt.show()
+
+#Pie-chart[2018]
+import matplotlib.pyplot as plt
+labels=['Forest','Shrubs','AgricultureLand','BuiltupArea','WaterBodies','Barrenland']
+sizes=[38.07,35.85,19.22,6.525,0.3005,0.0131]
+#add colors
+explode=[0.2,0,0,0,0.2,0.4]
+colors=['#90ee90','green','yellow','red','blue','#FF1493']
+fig1, ax1=plt.subplots()
+ax1.pie(sizes,labels=labels,colors=colors,autopct='%1.3f%%',shadow=True,explode=explode,startangle=90)
+#Equal aspect ratio ensures that pie is drawn as a circle
+ax1.axis('equal')
+plt.xlabel('2018')
+plt.tight_layout()
+plt.legend(['Forest','Shrubs','Agricultureland','BuiltupArea','Waterbodies','Barrenland'])
+plt.savefig('2018-Pie.png',bbox_inches='tight')
+plt.show()
+
+#Pie-Chart [2019]
+import matplotlib.pyplot as plt
+labels=['Forest','Shrubs','AgricultureLand','BuiltupArea','WaterBodies','Barrenland']
+sizes=[41.4501,35.3782,16.7563,5.7749,0.6283,0.011]
+#add colors
+explode=[0.2,0,0,0,0.2,0.4]
+colors=['#90ee90','green','yellow','red','blue','#FF1493']
+fig1, ax1=plt.subplots()
+ax1.pie(sizes,labels=labels,colors=colors,autopct='%1.3f%%',shadow=True,explode=explode,startangle=90)
+#Equal aspect ratio ensures that pie is drawn as a circle
+ax1.axis('equal')
+plt.xlabel('2019')
+plt.tight_layout()
+plt.legend(['Forest','Shrubs','Agricultureland','BuiltupArea','Waterbodies','Barrenland'])
+plt.savefig('2019-Pie.png',bbox_inches='tight')
+plt.show()
+
+#Pie-Chart [2020]
+import matplotlib.pyplot as plt
+labels=['Forest','Shrubs','AgricultureLand','BuiltupArea','WaterBodies','Barrenland']
+sizes=[40.2574,29.222,21.167,8.830,0.505,0.015]
+#add colors
+explode=[0.2,0,0,0,0.2,0.4]
+colors=['#90ee90','green','yellow','red','blue','#FF1493']
+fig1, ax1=plt.subplots()
+ax1.pie(sizes,labels=labels,colors=colors,autopct='%1.3f%%',shadow=True,explode=explode,startangle=90)
+#Equal aspect ratio ensures that pie is drawn as a circle
+ax1.axis('equal')
+plt.xlabel('2020')
+plt.tight_layout()
+plt.legend(['Forest','Shrubs','Agricultureland','BuiltupArea','Waterbodies','Barrenland'])
+plt.savefig('2020-Pie.png',bbox_inches='tight')
+plt.show()
+
+#Pie-Chart [2021]
+import matplotlib.pyplot as plt
+labels=['Forest','Shrubs','AgricultureLand','BuiltupArea','WaterBodies','Barrenland']
+sizes=[33.1288,30.4092,19.5698,15.8071,1.036,0.0489]
+#add colors
+explode=[0.2,0,0,0,0.2,0.4]
+colors=['#90ee90','green','yellow','red','blue','#FF1493']
+fig1, ax1=plt.subplots()
+ax1.pie(sizes,labels=labels,colors=colors,autopct='%1.3f%%',shadow=True,explode=explode,startangle=90)
+#Equal aspect ratio ensures that pie is drawn as a circle
+ax1.axis('equal')
+plt.xlabel('2021')
+plt.tight_layout()
+plt.legend(['Forest','Shrubs','Agricultureland','BuiltupArea','Waterbodies','Barrenland'])
+plt.savefig('2021-Pie.png',bbox_inches='tight')
+plt.show()
